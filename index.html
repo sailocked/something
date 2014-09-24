@@ -1,0 +1,55 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Tweet Monitor</title>
+    <link rel="stylesheet" href="\css\home.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+
+
+
+$(document).mousemove(function(e){
+    var $width = ($(document).width())/255;
+    var $height = ($(document).height())/255;
+    var $pageX = parseInt(e.pageX / $width,10);
+    var $pageY = parseInt(e.pageY / $height,10);
+    $("body").css("background-color", "rgb("+$pageX+","+$pageY+","+$pageX+")");
+}); 
+
+function validate(){
+if($('#mce-EMAIL').val().length == 0){
+alert('Please enter something!');
+return false;
+}
+}
+
+
+</script>
+    
+</head>
+
+<body id = "body" data-twttr-rendered="true">
+    <div class="bg"></div>
+    <div class="bgOverlay"></div>
+    <div class="wrapper">
+        <div class="container">
+            <div class="title">
+                <h1>Tweet Monitor</h1>
+            </div>
+            <div class="tagline"><h5>Monitor tweets & sentiment on the fly!</h5></div>
+            <div class="signup">
+
+                <div id="mc_embed_signup">
+                    <form id="mc-embedded-subscribe-form" action="/" method="post" name="mc-embedded-subscribe-form" novalidate="" class="validate" _lpchecked="1">
+                        <input id="mce-EMAIL"  name="keyword" placeholder="What you want to monitor?" required="" class="email">
+                        <input id="mc-embedded-subscribe" type="submit" value="Check Now!" name="subscribe" class="button" onclick="return validate();">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
